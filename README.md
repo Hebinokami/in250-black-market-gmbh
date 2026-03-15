@@ -17,6 +17,7 @@ In diesem Repository wurden Struktur, Dokumentation und Ordnung wiederhergestell
 
 ## Dokumentationen
 - [Verzeichnisstruktur](docs/01_verzeichnisstruktur.md)
+- [Branch-Strategie](docs/02_branch_strategie.md)
 
 ## Aufgabenstatus
 - [x] Repository Setup
