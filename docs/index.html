@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Black Market Software GmbH</title>
+    <meta
+      name="description"
+      content="GitHub Pages Startseite der Black Market Software GmbH."
+    />
+
+    <style>
+      :root {
+        --bg: #020611;
+        --bg-soft: #081223;
+        --panel: rgba(7, 16, 31, 0.82);
+        --panel-2: rgba(10, 22, 40, 0.92);
+        --text: #eef4ff;
+        --muted: #a7b7d6;
+        --blue: #4da3ff;
+        --blue-2: #7cc4ff;
+        --line: rgba(124, 196, 255, 0.15);
+        --shadow: rgba(0, 0, 0, 0.55);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background:
+          radial-gradient(circle at top left, rgba(77, 163, 255, 0.14), transparent 25%),
+          radial-gradient(circle at top right, rgba(90, 120, 255, 0.12), transparent 22%),
+          linear-gradient(180deg, #020611 0%, #07101d 45%, #040914 100%);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      a {
+        color: var(--blue-2);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .hero {
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(2,6,17,0.25), rgba(2,6,17,0.78)),
+          radial-gradient(circle at 65% 20%, rgba(124,196,255,0.18), transparent 18%);
+        z-index: 1;
+      }
+
+      .hero img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.55) contrast(1.08) saturate(0.92);
+      }
+
+      .topbar {
+        position: relative;
+        z-index: 2;
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 24px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .brand small {
+        color: var(--muted);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-size: 11px;
+      }
+
+      .brand strong {
+        font-size: 16px;
+        letter-spacing: 0.04em;
+      }
+
+      .nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        padding: 10px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.03);
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .nav a.primary {
+        background: rgba(77, 163, 255, 0.12);
+        box-shadow: 0 0 0 1px rgba(77, 163, 255, 0.08) inset;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        min-height: calc(100vh - 86px);
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 26px;
+        align-items: center;
+        padding: 24px 0 48px;
+      }
+
+      .left {
+        max-width: 760px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.04);
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 18px 0 14px;
+        font-size: clamp(42px, 8vw, 88px);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+      }
+
+      .lead {
+        margin: 0;
+        color: #d7e5fb;
+        font-size: clamp(17px, 2.1vw, 21px);
+        line-height: 1.7;
+        max-width: 62ch;
+      }
+
+      .quote {
+        margin: 22px 0 0;
+        color: #9fc9ff;
+        font-size: 15px;
+        font-style: italic;
+      }
+
+      .panel {
+        background: linear-gradient(180deg, var(--panel), var(--panel-2));
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 22px;
+        box-shadow: 0 22px 44px var(--shadow);
+        backdrop-filter: blur(8px);
+      }
+
+      .panel h2 {
+        margin: 0 0 14px;
+        font-size: 18px;
+      }
+
+      .panel p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .list {
+        margin: 16px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .list li {
+        margin: 8px 0;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+        font-size: 16px;
+      }
+
+      .card p,
+      .card li {
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .card ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+      }
+
+      .footer-note {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 900px) {
+        .content {
+          grid-template-columns: 1fr;
+          align-items: end;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="hero">
+    <img src=".\assests\Arcane vigil on a moonlit cliff.png" alt="Dark wizard under the moon" />
+      <div class="topbar">
+        <div class="brand">
+          <small>GitHub Pages</small>
+          <strong>Black Market Software GmbH</strong>
+        </div>
+
+        <nav class="nav">
+          <a class="primary" href="https://github.com/Hebinokami/in250-black-market-gmbh">Repository</a>
+          <a href="https://github.com/Hebinokami/in250-black-market-gmbh/tree/main/docs">Docs</a>
+        </nav>
+      </div>
+
+      <div class="content">
+        <div class="left">
+          <span class="eyebrow">Dark Wizard Edition</span>
+          <h1>Black Market<br />Software GmbH</h1>
+          <p class="lead">
+            Dieses Repository wurde im Rahmen des IN250 Praxisauftrags aufgebaut,
+            dokumentiert und mit klaren Git- und GitHub-Prozessen strukturiert.
+          </p>
+          <p class="quote">
+            “In shadow, the careless are swallowed. In shadow, the cunning learn to see.”
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Projektübersicht</h3>
+              <p>
+                Ziel ist eine saubere und nachvollziehbare Entwicklungsumgebung
+                mit klarer Struktur, Dokumentation und kontrollierten Änderungen.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Arbeitsweise</h3>
+              <ul>
+                <li>Feature-Branches für Änderungen</li>
+                <li>Pull Requests vor dem Merge</li>
+                <li>Kein direktes Pushen auf <code>main</code></li>
+                <li>Versionierung mit <code>v1.0</code></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h2>Wichtige Dokumente</h2>
+          <p>Die wichtigsten Dateien dieses Repositories:</p>
+          <ul class="list">
+            <li>
+              <a href="https://github.com/Hebinokami/in250-black-market-gmbh/blob/main/docs/01_verzeichnisstruktur.md">
+                Verzeichnisstruktur
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Hebinokami/in250-black-market-gmbh/blob/main/docs/02_branch_strategie.md">
+                Branch-Strategie
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Hebinokami/in250-black-market-gmbh/blob/main/README.md">
+                Hauptseite des Repositories
+              </a>
+            </li>
+          </ul>
+          <li>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                 DO NOT CLICK
+             </a>
+            </li>
+
+          <div class="footer-note">
+            Stand: <strong>2026-03-15</strong><br />
+            Version: <strong>v1.0</strong><br />
+            Verantwortlich: <strong>@Hebinokami</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </body>
+</html>
