@@ -24,10 +24,10 @@ In diesem Repository wurden Struktur, Dokumentation und Ordnung wiederhergestell
 ## Aufgabenstatus
 - [x] Repository Setup
 - [x] Dokumentation
-- [ ] Hauptseite
-- [ ] Ignoranz
-- [ ] Automatisierung
-- [ ] Strategie
-- [ ] Konflikt
-- [ ] Github Pages
-- [ ] Abschluss
+- [x] Hauptseite
+- [x] Ignoranz
+- [x] Automatisierung
+- [x] Strategie
+- [x] Konflikt
+- [x] Github Pages
+- [x] Abschluss
